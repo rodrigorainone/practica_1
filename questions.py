@@ -36,7 +36,16 @@ for _ in range(3):
 
     # El usuario tiene 2 intentos para responder correctamente
     for intento in range(2):
-        user_answer = int(input("Respuesta: ")) - 1
+        try:
+            user_answer = int(input("Respuesta: ")) - 1
+            # Valida que la respuesta este dentro del rango
+            if not (0 <= user_answer<= 3):
+                print("Respuesta no válida" )
+                exit(1)
+        # Si el caracter no es un int sale
+        except ValueError:
+            print("Respuesta no válida" )
+            exit(1)
         # Se verifica si la respuesta es correcta
         if user_answer == correct_answers_index[question_index]:
             print("¡Correcto!")
