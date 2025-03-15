@@ -23,7 +23,7 @@ answers = [
 # Índice de la respuesta correcta para cada pregunta, el mismo orden que las preguntas
 correct_answers_index = [1, 2, 0, 3, 1]
 #arma una lista random que se puede repetir , agrupando la pregunta lass respuestas y la respuesta correcta . solo 3 de todas las que hay
-questions_to_ask = random.choices(list(zip(questions, answers, correct_answers_index)), k=3)
+questions_to_ask = random.sample(list(zip(questions, answers, correct_answers_index)), k=3)
 
 puntos = 0 
 # El usuario deberá contestar 3 preguntas
