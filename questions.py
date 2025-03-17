@@ -53,12 +53,14 @@ for question, answer_options, correct_answer_index in questions_to_ask:
             print("¡Correcto!")
             break
         else:
-            # Si el usuario no responde correctamente después de 2 intentos,  se muestra la respuesta correcta
-            puntos -= 0.5
-            print("Incorrecto. La respuesta correcta es:")
-            print(answer_options[correct_answer_index])
-            # Se imprime un blanco al final de la pregunta
-            print()
+           puntos -= 0.5  
+           print("¡es Incorrecto!")   
+    else:
+        # Si el usuario no responde correctamente después de 2 intentos,  se muestra la respuesta correcta        
+        print("Incorrecto. La respuesta correcta es:")
+        print(answer_options[correct_answer_index])
+        # Se imprime un blanco al final de la pregunta
+        print()
 #para que no muestre puntos negativos , si el resultado es menor a 0 te muestra cero             
 if puntos < 0:
     print("obtuvo 0 puntos")
