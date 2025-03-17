@@ -40,16 +40,16 @@ for question, answer_options, correct_answer_index in questions_to_ask:
         try:
             user_answer = int(input("Respuesta: ")) - 1
             # Valida que la respuesta este dentro del rango
-            if not (0 <= user_answer<= 3):
-                print("Respuesta no válida" )
+            if not (0 <= user_answer <= 3):
+                print("Respuesta no válida")
                 exit(1)
         # Si el caracter no es un int sale
         except ValueError:
-            print("Respuesta no válida" )
+            print("Respuesta no válida")
             exit(1)
         # Se verifica si la respuesta es correcta
         if user_answer == correct_answer_index:
-            puntos +=1
+            puntos += 1
             print("¡Correcto!")
             break
         else:
@@ -62,7 +62,7 @@ for question, answer_options, correct_answer_index in questions_to_ask:
         # Se imprime un blanco al final de la pregunta
         print()
 #para que no muestre puntos negativos , si el resultado es menor a 0 te muestra cero             
-if puntos < 0:
+if puntos < 0 :
     print("obtuvo 0 puntos")
 else:
     print(f"obtuvo {puntos} puntos")
