@@ -36,18 +36,14 @@ for question, answer_options, correct_answer_index in questions_to_ask:
         print(f"{i + 1}. {answer}")
 
     # El usuario tiene 2 intentos para responder correctamente
-    for intento in range(2):
-        try:
-            user_answer = int(input("Respuesta: ")) - 1
-            # Valida que la respuesta este dentro del rango
-            if not (0 <= user_answer <= 3):
-                print("Respuesta no válida")
-                exit(1)
-        # Si el caracter no es un int sale
-        except ValueError:
-            print("Respuesta no válida")
+    for intento in range(2):        
+        user_answer = input("Respuesta: ")
+        if user_answer in ["1","2","3","4"]:
+            user_answer= int(user_answer)-1
+        else:
+            print("Respuesta no Valida")
             exit(1)
-        # Se verifica si la respuesta es correcta
+        #se fija si la respuesta es correcta                
         if user_answer == correct_answer_index:
             puntos += 1
             print("¡Correcto!")
